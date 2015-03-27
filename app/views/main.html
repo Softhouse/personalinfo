@@ -1,17 +1,21 @@
-<form>
-  <div class="row">
-    <div class="medium-6 columns">
-      <label>Biography
-        <textarea placeholder="Biography" ng-model="vm.me.public.biography"></textarea>
-      </label>
+<form ng-if="!!vm.me">
+    <div class="row">
+        <div class="medium-6 columns">
+            <label>Biography
+                <textarea placeholder="Biography" ng-model="vm.me.public.biography"> {{vm.me.public.biography}}</textarea>
+            </label>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="medium-6 columns">
-      <a href="" class="button small" ng-disabled="vm.saving" ng-click="vm.save()">Save</a>
+    <div class="row">
+        <div class="medium-6 columns">
+            <a href="" class="button small" ng-disabled="vm.saving" ng-click="vm.save()">Save</a>
+        </div>
+        <span ng-show="vm.saving">Saving profile please wait.</span>
     </div>
-    <span ng-show="vm.saving">Saving profile please wait.</span>
-  </div>
-    
-  
+
+
+
+
 </form>
+
+<div ng-if="!vm.me">Loading profile, please wait</div>
