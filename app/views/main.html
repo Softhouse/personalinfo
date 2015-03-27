@@ -1,0 +1,47 @@
+<div class="row medium-uncollapse">
+  <div class="small-12 medium-6 columns">
+    <h1>'Allo, 'Allo!</h1>
+    <p>
+      <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+      Always a pleasure scaffolding your apps.
+    </p>
+    <p><a class="button success" ng-href="#/"><i class="fa fa-fw fa-check"></i>Splendid!</a></p>
+  </div>
+  <div class="small-12 medium-6 columns callout panel">
+    <h4>HTML5 Boilerplate</h4>
+    <p>
+      HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+    </p>
+  </div>
+  <div class="small-12 medium-6 columns panel">
+    <h4>Angular</h4>
+    <p>
+      AngularJS is a toolset for building the framework most suited to your application development.
+    </p>
+  </div>
+  <div class="small-12 medium-6 columns callout panel">
+    <h4>Foundation</h4>
+    <p>
+      The most advanced responsive front-end framework in the world.
+    </p>
+  </div>
+  <div class="small-12 medium-6 columns panel">
+    <h4>Karma</h4>
+    <p>Spectacular Test Runner for JavaScript.</p>
+  </div>
+  <div class="small-12 medium-6 columns panel">
+    <h4>Stuff in the controller</h4>
+    <div class="row" ng-repeat="awesomeThing in vm.awesomeThings">
+      <div class="small-10 columns">{{ awesomeThing.title }}</div>
+      <div class="small-2 columns"><button class="button tiny" ng-click="vm.removeAwesomeThing(awesomeThing)"><i class="fa fa-fw fa-minus-circle"></i></button></div>
+    </div>
+    <div class="row">
+      <div class="small-10 columns"><form><input type="text" class="" ng-model="vm.newAwesomeThing.title"></form></div>
+      <div class="small-2 columns">
+        <button class="button tiny success" ng-click="vm.addAwesomeThing( vm.newAwesomeThing )" ng-disabled="vm.loading">
+          <i class="fa fa-fw fa-plus-circle"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

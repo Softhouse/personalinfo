@@ -1,0 +1,15 @@
+.top-bar {
+  margin-bottom: 10px;
+}
+
+.footer {
+  width:100%;
+  background: lightgrey;
+  position: fixed;
+  bottom: 0px;  
+}
+
+.footer > .panel {
+  margin: 0px;
+  text-align: center;
+}
