@@ -73,15 +73,12 @@ module.exports = function (grunt) {
       },
       proxies: [
         {
-            context: '/api',
-            host: 'localhost',
-            port: 3232,
+            context: '/employees',
+            host: 'xyz.softhouse.se',
+            port: 80,
             https: false,
             xforward: false,
             headers: {
-            },
-            rewrite: {
-              '^/api': ''
             }
         }
       ],
