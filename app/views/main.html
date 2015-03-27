@@ -8,8 +8,9 @@
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <a href="" class="button small" ng-click="vm.save()">Save</a>
+      <a href="" class="button small" ng-disabled="vm.saving" ng-click="vm.save()">Save</a>
     </div>
+    <span ng-show="vm.saving">Saving profile please wait.</span>
   </div>
     
   

@@ -21,9 +21,9 @@
 			vm.me = response.data;
 		});
 
-		function save(me) {
+		function save() {
 			vm.saving = true;
-			$http.put('/employees/me', me).then(function(response) {
+			$http.put('/employees/me', vm.me).then(function(response) {
 				vm.saving = false;
 			},function(errorResponse) {
 				$log.error(errorResponse);
