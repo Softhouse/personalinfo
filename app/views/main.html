@@ -1,10 +1,14 @@
+<div data-alert class="alert-box" ng-repeat="error in vm.errors" ng-if="!error.dismissed"> 
+  {{ error.message }}
+  <a href="" ng-click="error.dismissed=true" class="close">&times;</a>
+</div>
+
 <form ng-if="!!vm.me">
-    <div class="row">
-        <div class="medium-6 columns">
-            <label>Biography
-                <textarea placeholder="Biography" ng-model="vm.me.public.biography"> {{vm.me.public.biography}}</textarea>
-            </label>
-        </div>
+  <div class="row">
+    <div class="medium-6 columns">
+      <label>Biography
+        <textarea placeholder="Biography" ng-model="vm.me.public.biography"></textarea>
+      </label>
     </div>
     <div class="row">
         <div class="medium-6 columns">

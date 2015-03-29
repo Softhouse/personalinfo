@@ -12,16 +12,18 @@
     angular.module('shSpringMeetingAngularApp')
             .controller('MainCtrl', mainCtrl);
 
-    function mainCtrl($scope, $log, $http) {
-        var vm = this;
-        vm.me = {};
-        vm.save = save;
+	function mainCtrl($log, $http) {
+		var vm = this;
+	    vm.me = undefined;
+	    vm.save = save;
+	    vm.errors = [];
 
-        $http.get('/employees/me').then(function (response) {
-            vm.me = response.data;
-        });
+		$http.get('/employees/me').then(function(response) {
+			vm.me = response.data;
+		},function(errorResponse) {
+			vm.errors.push({ message: errorResponse.statusText })			
+		});
 
-<<<<<<< HEAD
 		function save() {
 			vm.saving = true;
 			$http.put('/employees/me', vm.me).then(function(response) {
@@ -29,20 +31,9 @@
 			},function(errorResponse) {
 				$log.error(errorResponse);
 				vm.saving = false;
+				vm.errors.push({ message: errorResponse.statusText })
 			});
 		}
 	 }
-=======
-        function save(me) {
-            vm.saving = true;
-            $http.put('/employees/me', me).then(function (response) {
-                vm.saving = false;
-            }, function (errorResponse) {
-                $log.error(errorResponse);
-                vm.saving = false;
-            });
-        }
-    }
->>>>>>> added some loaders stuff
 
 })();

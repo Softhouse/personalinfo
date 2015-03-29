@@ -31,5 +31,6 @@
       .otherwise({
         redirectTo: '/'
       });
+
   }
 })();
